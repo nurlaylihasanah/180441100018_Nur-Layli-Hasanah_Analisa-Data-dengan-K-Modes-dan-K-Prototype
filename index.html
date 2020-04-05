@@ -1,0 +1,912 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://squidfunk.github.io/mkdocs-material/">
+      
+      
+        <meta name="author" content="Martin Donath">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Material for MkDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" aria-label="Material for MkDocs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Material for MkDocs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Material
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Material
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="extensions/admonition/" class="md-tabs__link">
+          Extensions
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="plugins/minify-html/" class="md-tabs__link">
+          Plugins
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Material for MkDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="." title="Material" class="md-nav__link md-nav__link--active">
+      Material
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/admonition/" title="Admonition" class="md-nav__link">
+      Admonition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/codehilite/" title="CodeHilite" class="md-nav__link">
+      CodeHilite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/footnotes/" title="Footnotes" class="md-nav__link">
+      Footnotes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/metadata/" title="Metadata" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/permalinks/" title="Permalinks" class="md-nav__link">
+      Permalinks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/pymdown/" title="PyMdown" class="md-nav__link">
+      PyMdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Plugins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Plugins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="plugins/minify-html/" title="Minify HTML" class="md-nav__link">
+      Minify HTML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="plugins/revision-date/" title="Revision date" class="md-nav__link">
+      Revision date
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="plugins/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="specimen/" title="Specimen" class="md-nav__link">
+      Specimen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="customization/" title="Customization" class="md-nav__link">
+      Customization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="compliance/" title="Compliance with GDPR" class="md-nav__link">
+      Compliance with GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="release-notes/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="authors-notes/" title="Author's notes" class="md-nav__link">
+      Author's notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Material</h1>
+                
+                <p><strong>Nama : Nur Layli Hasanah</strong></p>
+<p><strong>NIM   : 180441100018</strong></p>
+<p><strong>Matkul-Kelas : Data Mining - 6C</strong></p>
+<p><strong>Dosen Pengampu : Mula'ab, S.Si.,M.Kom</strong></p>
+<p><strong>"Analisa Data dengan K-Modes dan K-Prototype yang diimplementasikan dengan Bahasa Python"</strong></p>
+<hr />
+<p><strong>Analisa Data dengan K-Modes</strong></p>
+<blockquote>
+<p>Sumber data : https://data.world/uci/flags/workspace/file?filename=flag.data.csv</p>
+<p>Tipe Data Categorical</p>
+</blockquote>
+<p><em>Source code :</em></p>
+<pre><code class="python">import numpy as np
+from kmodes.kmodes import KModes
+
+x = np.genfromtxt('flag.data.csv', dtype=int, delimiter=',')[:, :-1]
+
+kmodes_huang = KModes(n_clusters=4, init='Huang', verbose=1)
+kmodes_huang.fit(x)
+
+print('k-modes (flag.data.csv) centroid:')
+print(kmodes_huang.cluster_centroids_)
+print('Final training cost: {}'.format(kmodes_huang.cost_))
+print('Training Interations: {}'.format(kmodes_huang.n_iter_))
+</code></pre>
+
+<p><em>Output :</em></p>
+<pre><code class="python">Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run 1, iteration: 1/100, moves: 68, cost: 1515.0
+Run 1, iteration: 2/100, moves: 9, cost: 1505.0
+Run 1, iteration: 3/100, moves: 18, cost: 1491.0
+Run 1, iteration: 4/100, moves: 5, cost: 1490.0
+Run 1, iteration: 5/100, moves: 0, cost: 1490.0
+k-modes (flag.data.csv) centroid:
+[[-1  1  4  0  0  1  1  0  0  4  1  1  1  1  1  0  0 -1  0  0  0  0  0  0
+   0  1  1  0 -1]
+ [-1  4  1  4  2  8  2  0  3  4  1  1  0  1  1  1  0 -1  0  0  0  0  1  0
+   0  0  0  0 -1]
+ [-1  5  1  0  0 10  1  0  0  3  1  0  1  0  1  0  0 -1  0  0  0  0  0  0
+   0  0  0  0 -1]
+ [-1  4  4 28  3  2  0  0  0  3  1  1  0  0  1  0  0 -1  0  0  0  0  0  0
+   0  0  0  0 -1]]
+Final training cost: 1490.0
+Training Interations: 5
+</code></pre>
+
+<p><strong>Analisa Data dengan K-Prototype</strong></p>
+<blockquote>
+<p>Sumber data : https://data.world/uci/zoo/workspace/file?filename=zoo.data.csv</p>
+<p>Tipe Data Campuran (Numerical &amp; Categorical)</p>
+</blockquote>
+<p><em>Source code :</em></p>
+<pre><code class="python">import numpy as np
+from kmodes.kprototypes import KPrototypes
+
+syms = np.genfromtxt('zoo.data.csv', dtype=str, delimiter=',')[:, 0]
+X = np.genfromtxt('zoo.data.csv', dtype=object, delimiter=',')[:, 1:]
+X[:, 0] = X[:, 0].astype(float)
+
+kproto = KPrototypes(n_clusters=2, init='Cao', verbose=2)
+clusters = kproto.fit_predict(X, categorical=[9, 2])
+
+print(kproto.cluster_centroids_)
+print(kproto.cost_)
+print(kproto.n_iter_)
+
+for s, c in zip(syms, clusters):
+    print(&quot;Symbol: {}, cluster:{}&quot;.format(s, c))
+</code></pre>
+
+<p><em>Output :</em></p>
+<pre><code class="python">Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 1, iteration: 1/100, moves: 20, ncost: 841.149309028391
+Run: 1, iteration: 2/100, moves: 5, ncost: 827.8418636291967
+Run: 1, iteration: 3/100, moves: 0, ncost: 827.8418636291967
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 2, iteration: 1/100, moves: 0, ncost: 726.1758889307715
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 3, iteration: 1/100, moves: 9, ncost: 796.2115131955386
+Run: 3, iteration: 2/100, moves: 2, ncost: 793.4882245992027
+Run: 3, iteration: 3/100, moves: 0, ncost: 793.4882245992027
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 4, iteration: 1/100, moves: 4, ncost: 801.2229698134969
+Run: 4, iteration: 2/100, moves: 0, ncost: 801.2229698134969
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 5, iteration: 1/100, moves: 1, ncost: 707.3423205047649
+Run: 5, iteration: 2/100, moves: 0, ncost: 707.3423205047649
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 6, iteration: 1/100, moves: 10, ncost: 796.2115131955386
+Run: 6, iteration: 2/100, moves: 2, ncost: 793.4882245992027
+Run: 6, iteration: 3/100, moves: 0, ncost: 793.4882245992027
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 7, iteration: 1/100, moves: 8, ncost: 726.1758889307715
+Run: 7, iteration: 2/100, moves: 0, ncost: 726.1758889307715
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 8, iteration: 1/100, moves: 3, ncost: 838.7384654010058
+Run: 8, iteration: 2/100, moves: 1, ncost: 838.2673910359729
+Run: 8, iteration: 3/100, moves: 0, ncost: 838.2673910359729
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 9, iteration: 1/100, moves: 1, ncost: 801.2229698134969
+Run: 9, iteration: 2/100, moves: 0, ncost: 801.2229698134969
+Init: initializing centroids
+Init: initializing clusters
+Starting iterations...
+Run: 10, iteration: 1/100, moves: 1, ncost: 726.1758889307715
+Run: 10, iteration: 2/100, moves: 0, ncost: 726.1758889307715
+Best run was number 5
+[array([[0.46987952, 0.24096386, 0.4939759 , 0.21686747, 0.3253012 ,
+        0.55421687, 0.68674699, 0.95180723, 0.04819277, 0.20481928,
+        2.24096386, 0.87951807, 0.14457831, 0.51807229, 2.12048193],
+       [0.22222222, 0.        , 0.        , 0.33333333, 0.5       ,
+        0.55555556, 0.22222222, 0.22222222, 0.22222222, 0.        ,
+        5.61111111, 0.11111111, 0.05555556, 0.05555556, 6.11111111]]), 
+ array([[b'1', b'1'],
+       [b'1', b'1']], dtype='|S1')]
+707.3423205047649
+2
+Symbol: aardvark, cluster:0
+Symbol: antelope, cluster:0
+Symbol: bass, cluster:0
+Symbol: bear, cluster:0
+Symbol: boar, cluster:0
+Symbol: buffalo, cluster:0
+Symbol: calf, cluster:0
+Symbol: carp, cluster:0
+Symbol: catfish, cluster:0
+Symbol: cavy, cluster:0
+Symbol: cheetah, cluster:0
+Symbol: chicken, cluster:0
+Symbol: chub, cluster:0
+Symbol: clam, cluster:0
+Symbol: crab, cluster:1
+Symbol: crayfish, cluster:1
+Symbol: crow, cluster:0
+Symbol: deer, cluster:0
+Symbol: dogfish, cluster:0
+Symbol: dolphin, cluster:0
+Symbol: dove, cluster:0
+Symbol: duck, cluster:0
+Symbol: elephant, cluster:0
+Symbol: flamingo, cluster:0
+Symbol: flea, cluster:1
+Symbol: frog, cluster:1
+Symbol: frog, cluster:1
+Symbol: fruitbat, cluster:0
+Symbol: giraffe, cluster:0
+Symbol: girl, cluster:0
+Symbol: gnat, cluster:1
+Symbol: goat, cluster:0
+Symbol: gorilla, cluster:0
+Symbol: gull, cluster:0
+Symbol: haddock, cluster:0
+Symbol: hamster, cluster:0
+Symbol: hare, cluster:0
+Symbol: hawk, cluster:0
+Symbol: herring, cluster:0
+Symbol: honeybee, cluster:1
+Symbol: housefly, cluster:1
+Symbol: kiwi, cluster:0
+Symbol: ladybird, cluster:1
+Symbol: lark, cluster:0
+Symbol: leopard, cluster:0
+Symbol: lion, cluster:0
+Symbol: lobster, cluster:1
+Symbol: lynx, cluster:0
+Symbol: mink, cluster:0
+Symbol: mole, cluster:0
+Symbol: mongoose, cluster:0
+Symbol: moth, cluster:1
+Symbol: newt, cluster:1
+Symbol: octopus, cluster:1
+Symbol: opossum, cluster:0
+Symbol: oryx, cluster:0
+Symbol: ostrich, cluster:0
+Symbol: parakeet, cluster:0
+Symbol: penguin, cluster:0
+Symbol: pheasant, cluster:0
+Symbol: pike, cluster:0
+Symbol: piranha, cluster:0
+Symbol: pitviper, cluster:0
+Symbol: platypus, cluster:0
+Symbol: polecat, cluster:0
+Symbol: pony, cluster:0
+Symbol: porpoise, cluster:0
+Symbol: puma, cluster:0
+Symbol: pussycat, cluster:0
+Symbol: raccoon, cluster:0
+Symbol: reindeer, cluster:0
+Symbol: rhea, cluster:0
+Symbol: scorpion, cluster:1
+Symbol: seahorse, cluster:0
+Symbol: seal, cluster:0
+Symbol: sealion, cluster:0
+Symbol: seasnake, cluster:0
+Symbol: seawasp, cluster:0
+Symbol: skimmer, cluster:0
+Symbol: skua, cluster:0
+Symbol: slowworm, cluster:0
+Symbol: slug, cluster:0
+Symbol: sole, cluster:0
+Symbol: sparrow, cluster:0
+Symbol: squirrel, cluster:0
+Symbol: starfish, cluster:1
+Symbol: stingray, cluster:0
+Symbol: swan, cluster:0
+Symbol: termite, cluster:1
+Symbol: toad, cluster:1
+Symbol: tortoise, cluster:0
+Symbol: tuatara, cluster:0
+Symbol: tuna, cluster:0
+Symbol: vampire, cluster:0
+Symbol: vole, cluster:0
+Symbol: vulture, cluster:0
+Symbol: wallaby, cluster:0
+Symbol: wasp, cluster:1
+Symbol: wolf, cluster:0
+Symbol: worm, cluster:0
+Symbol: wren, cluster:0
+</code></pre>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="getting-started/" title="Getting started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting started
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 Martin Donath
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="http://struct.cc" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/squidfunk" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/squidfunk" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/squidfunk/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.df00da5d.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
